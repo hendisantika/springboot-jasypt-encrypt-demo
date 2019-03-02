@@ -1,6 +1,8 @@
 package com.hendisantika.springbootjasyptencryptdemo;
 
 import com.ulisesbocchio.jasyptspringboot.annotation.EnableEncryptableProperties;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,7 +14,6 @@ import org.springframework.stereotype.Component;
 public class SpringbootJasyptEncryptDemoApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringbootJasyptEncryptDemoApplication.class, args);
         ConfigurableApplicationContext configurableApplicationContext = SpringApplication.run(SpringbootJasyptEncryptDemoApplication.class, args);
         MyTest myTest = configurableApplicationContext.getBean(MyTest.class);
         myTest.testPrint();
@@ -23,6 +24,8 @@ public class SpringbootJasyptEncryptDemoApplication {
 @Component
 class MyTest {
 
+    private Logger logger = LogManager.getLogger(MyTest.class);
+
     @Value("${userdemo.name}")
     private String username;
 
@@ -30,10 +33,10 @@ class MyTest {
     private String cityname;
 
     public void testPrint() {
-        System.out.println("##############################");
-        System.out.println("Username is -------->" + username);
-        System.out.println("Cityname is -------->" + cityname);
-        System.out.println("##############################");
+        logger.info("##############################");
+        logger.info("Username is --------> {}", username);
+        logger.info("Cityname is --------> {}", cityname);
+        logger.info("##############################");
     }
 
 }
