@@ -31,10 +31,10 @@ Maven Dependencies
 
 **application.properties (example)**
 ```
-userdemo.name=ENC(HMooMwK7DCvB778KN1SLWXfTkmis1SpG)
+userdemo.name=ENC(aZXVBiaztkANYO4z/wRz0jErRDeafyOC)
 jasypt.encryptor.algorithm=PBEWithMD5AndDES
-jasypt.encryptor.password=techjava
-usercity.name=ENC(/uhgmmZ8sdzpQTZy35+kmA==)
+jasypt.encryptor.password=supersecretz
+usercity.name=ENC(5YKd5LZVZsYiaQuBZxlxaA==)
 ```
 
 **Generate encrypt value**
@@ -44,5 +44,8 @@ usercity.name=ENC(/uhgmmZ8sdzpQTZy35+kmA==)
 * You can see exe files under bin folder.
 * Run the below command
 
-`./encrypt.sh input=techuser password=techjava`
+```
+./encrypt.sh input="bandung" password="supersecretz" algorithm="PBEWithMD5AndDES" verbose=true
+./decrypt.sh input="HMooMwK7DCvB778KN1SLWXfTkmis1SpG" password="supersecretz" algorithm="PBEWithMD5AndDES" verbose=true
+```
 
