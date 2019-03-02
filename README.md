@@ -25,7 +25,7 @@ Maven Dependencies
     <dependency>
         <groupId>com.github.ulisesbocchio</groupId>
         <artifactId>jasypt-spring-boot-starter</artifactId>
-        <version>1.16</version>
+        <version>2.1.1</version>
     </dependency>
 ```
 
